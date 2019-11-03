@@ -54,16 +54,26 @@
                                     <constraint firstAttribute="height" constant="250" id="rad-80-tCG"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VMe-Xs-HNs">
+                                <rect key="frame" x="30" y="632" width="354" height="30"/>
+                                <state key="normal" title="ADD NAME">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="fwd-9Q-Rzc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="120" id="6s9-1C-xLo"/>
                             <constraint firstItem="fwd-9Q-Rzc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="EqA-RU-jAZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="VMe-Xs-HNs" secondAttribute="bottom" constant="200" id="J0e-ZY-VLj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VMe-Xs-HNs" secondAttribute="trailing" constant="30" id="Knn-ST-9Z7"/>
+                            <constraint firstItem="VMe-Xs-HNs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="QVw-am-bhJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fwd-9Q-Rzc" secondAttribute="trailing" constant="20" id="rx2-hb-GaV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="addNameBtn" destination="VMe-Xs-HNs" id="AR4-lw-tvG"/>
                         <outlet property="helloLbl" destination="kY1-X1-u28" id="Nau-m6-zoS"/>
                         <outlet property="nameEntryTextField" destination="2hY-6b-r5x" id="SHo-2v-ZJe"/>
                         <outlet property="namesLbl" destination="xcg-B8-7Zi" id="YAE-MO-d9Y"/>
@@ -73,6 +83,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="133" y="139"/>
+        </scene>
+        <!--Add NameVC-->
+        <scene sceneID="SAN-iq-clp">
+            <objects>
+                <viewController storyboardIdentifier="AddNameVC" id="aRN-di-xTj" customClass="AddNameVC" customModule="Namer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Myd-mr-Iea">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fcf-SC-g0w">
+                                <rect key="frame" x="20" y="184" width="374" height="84"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ENTER A NAME..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Chc-i1-e2u">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="02M-2w-gfq">
+                                        <rect key="frame" x="0.0" y="54" width="374" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="SUBMIT">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fcf-SC-g0w" firstAttribute="top" secondItem="KNE-ea-ZZ3" secondAttribute="top" constant="140" id="6AA-CP-iJd"/>
+                            <constraint firstItem="fcf-SC-g0w" firstAttribute="leading" secondItem="KNE-ea-ZZ3" secondAttribute="leading" constant="20" id="wbE-1L-hJf"/>
+                            <constraint firstItem="KNE-ea-ZZ3" firstAttribute="trailing" secondItem="fcf-SC-g0w" secondAttribute="trailing" constant="20" id="y2A-Ub-aAL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KNE-ea-ZZ3"/>
+                    </view>
+                    <connections>
+                        <outlet property="newNameTextField" destination="Chc-i1-e2u" id="EIf-6g-yoA"/>
+                        <outlet property="submitBtn" destination="02M-2w-gfq" id="qI7-RQ-X41"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BTK-vM-70B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="833" y="136"/>
         </scene>
     </scenes>
 </document>
